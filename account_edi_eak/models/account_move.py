@@ -110,7 +110,7 @@ class AccountMove(models.Model):
             'PaymentTotalSum': self.format_monetary(self.amount_total),
             'PayerName': self.partner_id.name,
             'PaymentId': self.name,
-            'PayToAccount': self.company_id.eak_bank_id.acc_number or '',
+            'PayToAccount': self.company_id.eak_bank_id.acc_number.replace(" ", "") or '',
             'PayToName': self.company_id.name,
         }
 
